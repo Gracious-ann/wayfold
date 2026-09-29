@@ -1,0 +1,77 @@
+/*
+ * Дизайн-токени Wayfold, узяті з макета «Wayfold редизайн».
+ * Світла тема — у :root, темна — у .dark (екран «Темна тема»).
+ * Компоненти ніколи не пишуть hex напряму: лише ці змінні через класи Tailwind.
+ */
+
+:root {
+  /* Поверхні */
+  --wf-bg: #f7f6fb; /* фон сторінки, поля пошуку */
+  --wf-surface: #ffffff; /* картки, хедер, модалки */
+  --wf-muted: #e9e8f2; /* скелетони, неактивні заливки */
+
+  /* Текст */
+  --wf-fg: #27273f; /* основний текст, темні кнопки */
+  --wf-fg-muted: #5a5f7d; /* підзаголовки, описи */
+  --wf-fg-subtle: #6e7491; /* лейбли полів, другорядні дані */
+  --wf-fg-disabled: #a7acc7;
+
+  /* Межі */
+  --wf-border: #cbd4e6; /* обводки кнопок і чипів */
+  --wf-border-soft: #e4e3ee; /* роздільники */
+
+  /* Бренд */
+  --wf-primary: #524fe0; /* головна кнопка, логотип, акценти */
+  --wf-primary-fg: #ffffff;
+  --wf-primary-soft: #eeedfd; /* фон активного таба / іконки */
+  --wf-primary-strong: #3b38b8; /* текст на primary-soft */
+
+  /* Статуси й акцентні картки напрямків */
+  --wf-success: #2c6b55;
+  --wf-success-soft: #e3f1ec;
+  --wf-warm: #9a4a26;
+  --wf-warm-soft: #fce9df;
+  --wf-sky: #2f5a86;
+  --wf-sky-soft: #e4eef8;
+  --wf-danger: #b42318;
+  --wf-danger-soft: #fdece8;
+
+  /* Тіні */
+  --wf-shadow-card: 0 2px 4px rgb(28 5 77 / 0.06), 0 24px 60px rgb(6 47 125 / 0.08);
+  --wf-shadow-pop: 0 4px 12px rgb(6 47 125 / 0.14);
+
+  color-scheme: light;
+}
+
+.dark {
+  --wf-bg: #12121c;
+  --wf-surface: #1e1e2e;
+  --wf-muted: #2e2e42;
+
+  --wf-fg: #ededf7;
+  --wf-fg-muted: #a7acc7;
+  --wf-fg-subtle: #8c91ae;
+  --wf-fg-disabled: #6e7491;
+
+  --wf-border: #3a3a52;
+  --wf-border-soft: #2e2e42;
+
+  --wf-primary: #524fe0;
+  --wf-primary-fg: #ffffff;
+  --wf-primary-soft: #2a2850;
+  --wf-primary-strong: #b9b7ff;
+
+  --wf-success: #6fd3a6;
+  --wf-success-soft: #1d3a31;
+  --wf-warm: #f2c2a8;
+  --wf-warm-soft: #3a2a22;
+  --wf-sky: #cfe0ee;
+  --wf-sky-soft: #22303f;
+  --wf-danger: #ff8a7a;
+  --wf-danger-soft: #3a1f1c;
+
+  --wf-shadow-card: 0 2px 4px rgb(0 0 0 / 0.3), 0 24px 60px rgb(0 0 0 / 0.35);
+  --wf-shadow-pop: 0 4px 12px rgb(0 0 0 / 0.4);
+
+  color-scheme: dark;
+}

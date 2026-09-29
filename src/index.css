@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/fraunces/wght.css';
+@import '@fontsource-variable/fraunces/wght-italic.css';
+@import '@fontsource-variable/nunito-sans/wght.css';
+@import './styles/tokens.css';
+
+/* Темна тема вмикається класом .dark на <html> (перемикач — етап 7) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Робимо токени доступними як класи Tailwind:
+ * bg-bg, bg-surface, text-fg, text-fg-muted, border-border, bg-primary, font-display…
+ */
+@theme inline {
+  --color-bg: var(--wf-bg);
+  --color-surface: var(--wf-surface);
+  --color-muted: var(--wf-muted);
+
+  --color-fg: var(--wf-fg);
+  --color-fg-muted: var(--wf-fg-muted);
+  --color-fg-subtle: var(--wf-fg-subtle);
+  --color-fg-disabled: var(--wf-fg-disabled);
+
+  --color-border: var(--wf-border);
+  --color-border-soft: var(--wf-border-soft);
+
+  --color-primary: var(--wf-primary);
+  --color-primary-fg: var(--wf-primary-fg);
+  --color-primary-soft: var(--wf-primary-soft);
+  --color-primary-strong: var(--wf-primary-strong);
+
+  --color-success: var(--wf-success);
+  --color-success-soft: var(--wf-success-soft);
+  --color-warm: var(--wf-warm);
+  --color-warm-soft: var(--wf-warm-soft);
+  --color-sky: var(--wf-sky);
+  --color-sky-soft: var(--wf-sky-soft);
+  --color-danger: var(--wf-danger);
+  --color-danger-soft: var(--wf-danger-soft);
+
+  --shadow-card: var(--wf-shadow-card);
+  --shadow-pop: var(--wf-shadow-pop);
+
+  /* Fraunces не має кирилиці, тому для українських заголовків спрацює Georgia */
+  --font-display: 'Fraunces Variable', Georgia, serif;
+  --font-sans: 'Nunito Sans Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+  }
+}
