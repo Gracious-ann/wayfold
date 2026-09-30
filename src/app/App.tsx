@@ -6,6 +6,9 @@ import Stays from '../features/stays/Stays'
 import MyTrips from '../features/trips/MyTrips'
 import Main from '../features/home/Main'
 import PageNotFound from '../components/PageNotFound'
+import About from '../features/info/About'
+import Support from '../features/info/Support'
+import Privacy from '../features/info/Privacy'
 
 function App() {
   return (
@@ -38,6 +41,9 @@ function App() {
           <Route path="stays" element={<Stays />} />
           <Route path="flight-stay" element={<FlightStays />} />
           <Route path="trips" element={<MyTrips />} />
+          <Route path="about" element={<About />} />
+          <Route path="support" element={<Support />} />
+          <Route path="privacy" element={<Privacy />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

@@ -1,4 +1,4 @@
-import HeaderActions from '../HeaderActions'
+import HeaderActions from './HeaderActions'
 import Container from './Container'
 import Logo from './Logo'
 import NavList from './NavList'

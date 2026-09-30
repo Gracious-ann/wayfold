@@ -18,7 +18,7 @@ export default function HeaderActions() {
   }
 
   return (
-    <div className="flex items-center justify-end gap-10">
+    <div className="flex items-center gap-10">
       {/*
         Кнопка ОДНА — змінюється лише іконка всередині.
         onClick={handleToggleTheme} — передаємо саму функцію БЕЗ дужок:
@@ -30,7 +30,7 @@ export default function HeaderActions() {
         type="button"
         onClick={handleToggleTheme}
         aria-label={isOnDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
-        className="h-12 rounded-full border-[1.5px] border-border bg-surface"
+        className="flex size-10 items-center justify-center rounded-full border-[1.5px] border-border bg-surface"
       >
         {/*
           Показуємо іконку теми, НА ЯКУ перемкнемось:
@@ -46,7 +46,7 @@ export default function HeaderActions() {
         USD · English
       </button>
       <Link className="font-bold" to="/sign-in">
-        Sign-in
+        Sign in
       </Link>
       <Link
         className="flex h-11 items-center rounded-[10px] bg-fg px-5 text-[15px] font-bold text-bg"
