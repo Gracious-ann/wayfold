@@ -1,0 +1,92 @@
+{
+  "common": {
+    "nights_one": "{{count}} ніч",
+    "nights_few": "{{count}} ночі",
+    "nights_many": "{{count}} ночей",
+    "nights_other": "{{count}} ночі",
+    "adults_one": "{{count}} дорослий",
+    "adults_few": "{{count}} дорослих",
+    "adults_many": "{{count}} дорослих",
+    "adults_other": "{{count}} дорослого",
+    "rooms_one": "{{count}} номер",
+    "rooms_few": "{{count}} номери",
+    "rooms_many": "{{count}} номерів",
+    "rooms_other": "{{count}} номера",
+    "duration": "{{hours}} год {{minutes}} хв",
+    "fromPrice": "від {{price}}"
+  },
+  "language": {
+    "en": "English",
+    "uk": "Українська"
+  },
+  "nav": {
+    "label": "Головне меню",
+    "flights": "Рейси",
+    "stays": "Житло",
+    "flightStay": "Рейс + житло",
+    "myTrips": "Мої поїздки"
+  },
+  "header": {
+    "themeToDark": "Увімкнути темну тему",
+    "themeToLight": "Увімкнути світлу тему",
+    "signIn": "Увійти",
+    "createAccount": "Створити акаунт"
+  },
+  "hero": {
+    "eyebrow": "Рейси й житло в одному плані",
+    "titleStart": "Плануй усю поїздку,",
+    "titleAccent": "а не лише квиток.",
+    "lead": "Обери рейс, житло й місце в літаку за один раз. Wayfold тримає всю поїздку на одній шкалі часу з однією загальною ціною."
+  },
+  "search": {
+    "modeFlightStay": "Рейс + житло",
+    "modeFlightsOnly": "Лише рейси",
+    "modeStaysOnly": "Лише житло",
+    "flexibleDates_one": "Гнучкі дати ±{{count}} день",
+    "flexibleDates_few": "Гнучкі дати ±{{count}} дні",
+    "flexibleDates_many": "Гнучкі дати ±{{count}} днів",
+    "flexibleDates_other": "Гнучкі дати ±{{count}} дня",
+    "from": "Звідки",
+    "to": "Куди",
+    "dates": "Дати",
+    "travelers": "Мандрівники",
+    "submit": "Скласти поїздку"
+  },
+  "budget": {
+    "titleBefore": "Куди можна поїхати за",
+    "titleAfter": "?",
+    "subtitle_one": "Переліт туди й назад і {{count}} ніч у готелі, виліт: {{city}}, ціна за людину.",
+    "subtitle_few": "Переліт туди й назад і {{count}} ночі в готелі, виліт: {{city}}, ціна за людину.",
+    "subtitle_many": "Переліт туди й назад і {{count}} ночей у готелі, виліт: {{city}}, ціна за людину.",
+    "subtitle_other": "Переліт туди й назад і {{count}} ночі в готелі, виліт: {{city}}, ціна за людину.",
+    "anyBudget": "Будь-який бюджет"
+  },
+  "destinations": {
+    "bestValue": "Найвигідніше цього місяця",
+    "nonstop": "Без пересадок",
+    "stops_one": "{{count}} пересадка",
+    "stops_few": "{{count}} пересадки",
+    "stops_many": "{{count}} пересадок",
+    "stops_other": "{{count}} пересадки",
+    "surpriseMe": "Здивуй мене",
+    "moreTrips_one": "Ще {{count}} поїздка дешевше за {{price}} →",
+    "moreTrips_few": "Ще {{count}} поїздки дешевше за {{price}} →",
+    "moreTrips_many": "Ще {{count}} поїздок дешевше за {{price}} →",
+    "moreTrips_other": "Ще {{count}} поїздки дешевше за {{price}} →"
+  },
+  "features": {
+    "calendarTitle": "Календар цін для всієї поїздки",
+    "calendarText": "Зсувай дати й дивись, як разом змінюються ціни на рейс і готель, а не окремо.",
+    "staysTitle": "Житло під твій рейс",
+    "staysText": "Прилітаєш о 6 ранку? Покажемо готелі з раннім заселенням і час дороги з аеропорту.",
+    "bookingTitle": "Одне бронювання, одна сума",
+    "bookingText": "Місця, багаж і ночі складаються в один кошик, а безкоштовне скасування видно ще до оплати."
+  },
+  "footer": {
+    "tagline": "Портфоліо-проєкт. Рейси й житло працюють на тестових даних.",
+    "navLabel": "Нижнє меню",
+    "about": "Про проєкт",
+    "support": "Підтримка",
+    "privacy": "Конфіденційність"
+  }
+}

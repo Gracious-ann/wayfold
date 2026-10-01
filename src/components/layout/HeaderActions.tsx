@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { LuMoon, LuSun } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
+import Button from '../ui/Button'
 
 export default function HeaderActions() {
   // (Якщо змінити лише клас на <html>, React про це не дізнається й іконку не оновить.)
@@ -39,12 +40,9 @@ export default function HeaderActions() {
         */}
         {isOnDarkMode ? <LuSun size={24} /> : <LuMoon size={24} />}
       </button>
-      <button
-        className="h-10 rounded-full border-[1.5px] border-border bg-surface px-3.5 text-sm font-bold"
-        type="button"
-      >
+      <Button variant="outline" type="button">
         USD · English
-      </button>
+      </Button>
       <Link className="font-bold" to="/sign-in">
         Sign in
       </Link>

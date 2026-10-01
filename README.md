@@ -2,6 +2,8 @@
 
 Рейс, житло, місця й оплата в одній поїздці. Пет-проєкт на React.
 
+**Демо:** [wayfold-phi.vercel.app](https://wayfold-phi.vercel.app/)
+
 **Стек:** Vite · React 19 · TypeScript · Tailwind CSS v4 · Supabase · Stripe (test mode)
 
 ## Запуск
