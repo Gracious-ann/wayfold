@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Budget from './Budget'
+import TourOffers from './TourOffers'
 
 export default function Destination() {
   const def = { night: '5', city: 'San Francisco' }
@@ -22,6 +23,7 @@ export default function Destination() {
         </div>
         <Budget value={budget} onChange={setBudget} />
       </div>
+      <TourOffers value={budget} />
     </section>
   )
 }
