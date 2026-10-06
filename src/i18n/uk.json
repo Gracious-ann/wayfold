@@ -13,7 +13,9 @@
     "rooms_many": "{{count}} номерів",
     "rooms_other": "{{count}} номера",
     "duration": "{{hours}} год {{minutes}} хв",
-    "fromPrice": "від {{price}}"
+    "fromPrice": "від {{price}}",
+    "from": "від",
+    "hotel": "готель"
   },
   "language": {
     "en": "English",
@@ -50,7 +52,7 @@
     "to": "Куди",
     "dates": "Дати",
     "travelers": "Мандрівники",
-    "submit": "Скласти поїздку"
+    "submit": "Знайти поїздку"
   },
   "budget": {
     "titleBefore": "Куди можна поїхати за",
@@ -59,7 +61,8 @@
     "subtitle_few": "Переліт туди й назад і {{count}} ночі в готелі, виліт: {{city}}, ціна за людину.",
     "subtitle_many": "Переліт туди й назад і {{count}} ночей у готелі, виліт: {{city}}, ціна за людину.",
     "subtitle_other": "Переліт туди й назад і {{count}} ночі в готелі, виліт: {{city}}, ціна за людину.",
-    "anyBudget": "Будь-який бюджет"
+    "anyBudget": "Будь-який бюджет",
+    "anyBudgetInTitle": "будь-який бюджет"
   },
   "destinations": {
     "bestValue": "Найвигідніше цього місяця",
@@ -72,9 +75,14 @@
     "moreTrips_one": "Ще {{count}} поїздка дешевше за {{price}} →",
     "moreTrips_few": "Ще {{count}} поїздки дешевше за {{price}} →",
     "moreTrips_many": "Ще {{count}} поїздок дешевше за {{price}} →",
-    "moreTrips_other": "Ще {{count}} поїздки дешевше за {{price}} →"
+    "moreTrips_other": "Ще {{count}} поїздки дешевше за {{price}} →",
+    "photo": "Фото",
+    "moreTripsAny_one": "Ще {{count}} поїздка →",
+    "moreTripsAny_few": "Ще {{count}} поїздки →",
+    "moreTripsAny_many": "Ще {{count}} поїздок →",
+    "moreTripsAny_other": "Ще {{count}} поїздки →"
   },
-  "features": {
+  "benefits": {
     "calendarTitle": "Календар цін для всієї поїздки",
     "calendarText": "Зсувай дати й дивись, як разом змінюються ціни на рейс і готель, а не окремо.",
     "staysTitle": "Житло під твій рейс",

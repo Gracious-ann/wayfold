@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import type { Destination } from './destinations.data'
 import { toneBg, toneText } from './tones'
 
 // ВЕЛИКА картка: місто, в якого в даних є featured (зараз це Tokyo).
 export default function CardFeatured({ info }: { info: Destination }) {
+  const { t } = useTranslation()
   const featured = info.featured
   if (!featured) return null
 
@@ -15,9 +17,11 @@ export default function CardFeatured({ info }: { info: Destination }) {
       >
         <div className="flex items-center justify-between">
           <p className="rounded-full bg-surface px-3 py-1.5 text-[13px] font-bold">
-            {featured.badge}
+            {t('destinations.bestValue')}
           </p>
-          <p className={`text-[13px] font-bold ${toneText[info.tone]}`}>[photo: {info.photo}]</p>
+          <p className={`text-[13px] font-bold ${toneText[info.tone]}`}>
+            [{t('destinations.photo')}: {info.photo}]
+          </p>
         </div>
 
         {/* Додамо фото як додамо їх у базу даних. Зараз у нас немає фото, тому просто виводимо текст [photo: {info.photo}]. */}
@@ -29,7 +33,7 @@ export default function CardFeatured({ info }: { info: Destination }) {
               {info.country && `, ${info.country}`}
             </h3>
             <p className="text-[15px] text-fg-muted">
-              from{' '}
+              {t('common.from')}{' '}
               <strong className="text-[26px] text-fg">
                 ${info.priceFrom.toLocaleString('en-US')}
               </strong>
@@ -39,12 +43,14 @@ export default function CardFeatured({ info }: { info: Destination }) {
           <div className="flex gap-5 text-sm font-semibold text-fg-muted">
             <p>
               {info.duration}
-              {info.stops === 0 && ' nonstop'}
-              {info.stops === 1 && ' · 1 stop'}
-              {info.stops > 1 && ` · ${info.stops} stops`}
+              {/* Щоб тривалість перекладалась («11 год 20 хв»), у даних мають лежати окремо hours: 11 і minutes: 20. Це зробимо, коли дані поїдуть у базу. */}
+              {' · '}
+              {info.stops === 0
+                ? t('destinations.nonstop')
+                : t('destinations.stops', { count: info.stops })}
             </p>
             <p>
-              {featured.hotel} · {featured.nights} nights
+              {featured.hotel} · {t('common.nights', { count: featured.nights })}
             </p>
             <p>{featured.dates}</p>
           </div>

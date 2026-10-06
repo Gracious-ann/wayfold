@@ -8,15 +8,14 @@ import { NavLink } from 'react-router-dom'
 // «as const» наприкінці — підказка для TypeScript: label — це саме рядок
 // 'footer.about', а не будь-який string. Без нього t(link.label) підкреслиться
 // помилкою: TypeScript не зможе перевірити, що такий ключ існує в JSON.
-const footerLinks = [
-  { to: '/about', label: 'footer.about' },
-  { to: '/support', label: 'footer.support' },
-  { to: '/privacy', label: 'footer.privacy' },
-] as const
 
 export default function FooterNav() {
   const { t } = useTranslation()
-
+  const footerLinks = [
+    { to: '/about', label: t('footer.about') },
+    { to: '/support', label: t('footer.support') },
+    { to: '/privacy', label: t('footer.privacy') },
+  ]
   return (
     // aria-label — теж текст (його читає скрінрідер), тому теж через t()
     <nav aria-label={t('footer.navLabel')}>
@@ -30,7 +29,7 @@ export default function FooterNav() {
               to={link.to}
             >
               {/* link.label = 'footer.about' → t() повертає «About» або «Про проєкт» */}
-              {t(link.label)}
+              {link.label}
             </NavLink>
           </li>
         ))}

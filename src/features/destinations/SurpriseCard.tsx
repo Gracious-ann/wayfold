@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { LuGlobe } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
 import type { Destination } from './destinations.data'
@@ -9,16 +10,19 @@ export default function SurpriseCard({
   value: number | null
   data: Destination[]
 }) {
+  const { t } = useTranslation()
+
   // TODO (Етап 2): data.length — це кількість ПОКАЗАНИХ карток, а «more trips» має означати
   // «ще стільки, крім показаних». Коли дані прийдуть із бази, замінити на
   // (усього підходящих напрямків) − (показаних у сітці).
   function getSurpriseText() {
-    if (data.length === 1) {
-      return `${data.length} more trip under $${value?.toLocaleString('en-US')} →`
-    } else if (value === null) {
-      return `${data.length} more trips →`
+    if (value === null) {
+      return t('destinations.moreTripsAny', { count: data.length })
     } else {
-      return `${data.length} more trips under $${value?.toLocaleString('en-US')} →`
+      return t('destinations.moreTrips', {
+        count: data.length,
+        price: `$${value.toLocaleString('en-US')}`,
+      })
     }
   }
 
@@ -30,7 +34,7 @@ export default function SurpriseCard({
       >
         <LuGlobe size={32} strokeWidth={1.8} />
         <div className="flex flex-col gap-1.5">
-          <h3 className="font-display text-[28px] font-medium">Surprise me</h3>
+          <h3 className="font-display text-[28px] font-medium">{t('destinations.surpriseMe')}</h3>
           <p className="text-sm font-semibold text-border">{getSurpriseText()}</p>
         </div>
       </Link>

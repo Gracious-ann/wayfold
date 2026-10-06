@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { LuBed, LuCalendar, LuShieldCheck } from 'react-icons/lu'
 
 type Benefit = {
@@ -7,30 +8,6 @@ type Benefit = {
   type: 'primary' | 'warm' | 'success'
 }
 
-const benefits: Benefit[] = [
-  {
-    icon: <LuCalendar size={24} />,
-    title: 'A price calendar for the whole trip',
-    description:
-      'Shift your dates and see flight and hotel totals change together, not one at a time.',
-    type: 'primary',
-  },
-  {
-    icon: <LuBed size={24} />,
-    title: 'Stays matched to your flight',
-    description:
-      'Landing at 6 am? We surface hotels with early check-in and show the ride time from the airport.',
-    type: 'warm',
-  },
-  {
-    icon: <LuShieldCheck size={24} />,
-    title: 'One booking, one total',
-    description:
-      'Seats, bags and nights add up in a single cart, with free cancellation shown before you pay.',
-    type: 'success',
-  },
-]
-
 const benefitStyles = {
   primary: 'bg-primary-soft text-primary',
   warm: 'bg-warm-soft text-warm',
@@ -38,6 +15,29 @@ const benefitStyles = {
 }
 
 export default function Benefits() {
+  const { t } = useTranslation()
+
+  const benefits: Benefit[] = [
+    {
+      icon: <LuCalendar size={24} />,
+      title: t('benefits.calendarTitle'),
+      description: t('benefits.calendarText'),
+      type: 'primary',
+    },
+    {
+      icon: <LuBed size={24} />,
+      title: t('benefits.staysTitle'),
+      description: t('benefits.staysText'),
+      type: 'warm',
+    },
+    {
+      icon: <LuShieldCheck size={24} />,
+      title: t('benefits.bookingTitle'),
+      description: t('benefits.bookingText'),
+      type: 'success',
+    },
+  ]
+
   return (
     <section className="grid grid-cols-3 gap-5 pt-12 pb-12">
       {benefits.map((benefit) => (

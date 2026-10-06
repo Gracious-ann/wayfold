@@ -1,15 +1,18 @@
+import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 
-const navLinks = [
-  { to: '/flights', label: 'Flights' },
-  { to: '/stays', label: 'Stays' },
-  { to: '/flight-stay', label: 'Flight + Stay' },
-  { to: '/trips', label: 'My trips' },
-]
-
 export default function NavList() {
+  const { t } = useTranslation()
+
+  const navLinks = [
+    { to: '/flights', label: t('nav.flights') },
+    { to: '/stays', label: t('nav.stays') },
+    { to: '/flight-stay', label: t('nav.flightStay') },
+    { to: '/trips', label: t('nav.myTrips') },
+  ]
+
   return (
-    <nav className="grow">
+    <nav className="grow" aria-label={t('nav.label')}>
       <ul className="flex gap-7">
         {navLinks.map((link) => (
           <li key={link.to}>

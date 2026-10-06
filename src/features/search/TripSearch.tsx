@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import SearchFields from './SearchFields'
-
-const typeTrip = [
-  { id: 'flightStay', label: 'Flight + Stay' },
-  { id: 'flightOnly', label: 'Flights only' },
-  { id: 'stayOnly', label: 'Stays only' },
-]
+import { useTranslation } from 'react-i18next'
 
 export default function TripSearch() {
+  const { t } = useTranslation()
   const [active, setActive] = useState<string>('flightStay')
+
+  const typeTrip = [
+    { id: 'flightStay', label: t('search.modeFlightStay') },
+    { id: 'flightOnly', label: t('search.modeFlightsOnly') },
+    { id: 'stayOnly', label: t('search.modeStaysOnly') },
+  ]
 
   return (
     <form className="mt-10 flex flex-col gap-3 rounded-[20px] bg-surface p-3 shadow-card">
@@ -29,7 +31,9 @@ export default function TripSearch() {
         <div className="flex items-center gap-2">
           <label className="flex items-center gap-2.5 pr-2">
             <input className="size-[18px] accent-primary" type="checkbox" defaultChecked={true} />
-            <span className="text-sm font-semibold text-fg-muted">Flexible dates ±3 days</span>
+            <span className="text-sm font-semibold text-fg-muted">
+              {t('search.flexibleDates', { count: 3 })}
+            </span>
           </label>
         </div>
       </div>

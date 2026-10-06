@@ -1,15 +1,19 @@
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import type { Destination } from './destinations.data'
 import { toneBg, toneText } from './tones'
 
 export default function CardSmall({ info }: { info: Destination }) {
+  const { t } = useTranslation()
   return (
     <li>
       <Link
         to={`/flights?to=${info.id}`}
         className={`flex h-full flex-col justify-between rounded-3xl p-6 ${toneBg[info.tone]}`}
       >
-        <p className={`text-[13px] font-bold ${toneText[info.tone]}`}>[photo: {info.photo}]</p>
+        <p className={`text-[13px] font-bold ${toneText[info.tone]}`}>
+          [{t('destinations.photo')}: {info.photo}]
+        </p>
 
         <div className="flex flex-col gap-1.5">
           <h3 className="font-display text-[28px] font-medium">
@@ -18,12 +22,13 @@ export default function CardSmall({ info }: { info: Destination }) {
           </h3>
 
           <p className="text-sm font-semibold text-fg-muted">
-            {info.stops === 0 && 'Nonstop'}
-            {info.stops === 1 && '1 stop'}
-            {info.stops > 1 && `${info.stops} stops`}
+            {info.stops === 0 && t('destinations.nonstop')}
+            {info.stops === 1 && t('destinations.stops', { count: 1 })}
+            {info.stops > 1 && t('destinations.stops', { count: info.stops })}
             {' · '}
             {info.duration}
-            {' · from '}
+            {' · '}
+            {t('common.from')}{' '}
             <strong className="text-fg">${info.priceFrom.toLocaleString('en-US')}</strong>
           </p>
         </div>
