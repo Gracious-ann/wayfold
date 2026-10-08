@@ -9,14 +9,14 @@ export default function CardSmall({ info }: { info: Destination }) {
     <li>
       <Link
         to={`/flights?to=${info.id}`}
-        className={`flex h-full flex-col justify-between rounded-3xl p-6 ${toneBg[info.tone]}`}
+        className={`flex h-full flex-col justify-between rounded-3xl p-4 lg:p-6 ${toneBg[info.tone]}`}
       >
         <p className={`text-[13px] font-bold ${toneText[info.tone]}`}>
           [{t('destinations.photo')}: {info.photo}]
         </p>
 
         <div className="flex flex-col gap-1.5">
-          <h3 className="font-display text-[28px] font-medium">
+          <h3 className="font-display text-[22px] font-medium lg:text-[28px]">
             {info.city}
             {info.country && `, ${info.country}`}
           </h3>

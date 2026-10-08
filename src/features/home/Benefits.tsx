@@ -39,9 +39,12 @@ export default function Benefits() {
   ]
 
   return (
-    <section className="grid grid-cols-3 gap-5 pt-12 pb-12">
+    <section className="grid grid-cols-1 gap-3 pt-12 pb-12 lg:grid-cols-3 lg:gap-5">
       {benefits.map((benefit) => (
-        <div className="flex flex-col gap-3 rounded-[20px] bg-surface p-7" key={benefit.title}>
+        <div
+          className="flex flex-col gap-3 rounded-[20px] bg-surface p-5 lg:p-7"
+          key={benefit.title}
+        >
           <div
             className={`flex size-12 items-center justify-center rounded-[14px] ${benefitStyles[benefit.type]}`}
           >

@@ -12,7 +12,7 @@ export default function NavList() {
   ]
 
   return (
-    <nav className="grow" aria-label={t('nav.label')}>
+    <nav className="hidden grow lg:block" aria-label={t('nav.label')}>
       <ul className="flex gap-7">
         {navLinks.map((link) => (
           <li key={link.to}>

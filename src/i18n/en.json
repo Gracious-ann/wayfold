@@ -26,12 +26,14 @@
     "themeToDark": "Switch to dark theme",
     "themeToLight": "Switch to light theme",
     "signIn": "Sign in",
-    "createAccount": "Create account"
+    "createAccount": "Create account",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "eyebrow": "Flights and stays, planned together",
     "titleStart": "Plan the whole trip,",
-    "titleAccent": "not just the ticket .",
+    "titleAccent": "not just the ticket.",
     "lead": "Pick a flight, a place to stay and your seat in one flow. Wayfold keeps the whole trip on a single timeline with one total price."
   },
   "search": {
@@ -48,7 +50,7 @@
   },
   "budget": {
     "titleBefore": "Where can",
-    "titleAfter": "take you?",
+    "titleAfter": " take you?",
     "subtitle_one": "Round-trip flight and {{count}} night in a hotel, from {{city}}, per person.",
     "subtitle_other": "Round-trip flight and {{count}} nights in a hotel, from {{city}}, per person.",
     "anyBudget": "Any budget",

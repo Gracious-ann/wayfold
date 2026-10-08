@@ -14,17 +14,12 @@ export default function HeaderActions() {
 
   function handleToggleTheme() {
     const next = !isOnDarkMode
-    // 1) Запам'ятовуємо в стані → React перемалює кнопку з новою іконкою.
     setIsOnDarkMode(next)
-
-    // 2) Вмикаємо/вимикаємо темну тему на <html>.
-    // Другий аргумент toggle каже прямо: true — ДОДАТИ клас "dark", false — ПРИБРАТИ.
-    // Без нього toggle просто «перемикав би навмання» і міг би розійтися зі станом.
     document.documentElement.classList.toggle('dark', next)
   }
 
   return (
-    <div className="flex items-center gap-10">
+    <div className="ml-auto flex items-center gap-3 lg:ml-0 lg:gap-10">
       {/*
         Кнопка ОДНА — змінюється лише іконка всередині.
         onClick={handleToggleTheme} — передаємо саму функцію БЕЗ дужок:
@@ -49,14 +44,15 @@ export default function HeaderActions() {
         onClick={() => changeLanguage(language === 'en' ? 'uk' : 'en')}
         variant="outline"
         type="button"
+        className="max-lg:hidden"
       >
         USD · {t(`language.${language}`)}
       </Button>
-      <Link className="font-bold" to="/sign-in">
+      <Link className="hidden font-bold lg:block" to="/sign-in">
         {t('header.signIn')}
       </Link>
       <Link
-        className="flex h-11 items-center rounded-[10px] bg-fg px-5 text-[15px] font-bold text-bg"
+        className="hidden h-11 items-center rounded-[10px] bg-fg px-5 text-[15px] font-bold text-bg lg:flex"
         to="/sign-in"
       >
         {t('header.createAccount')}

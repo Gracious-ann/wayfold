@@ -3,15 +3,15 @@ import Button from '../../components/ui/Button'
 import { useTranslation } from 'react-i18next'
 
 const fieldBox =
-  'flex flex-col gap-1 bg-bg rounded-[14px] py-3.5 px-[18px] text-left focus-within:ring-2 focus-within:ring-primary focus-visible:ring-2 focus-visible:ring-primary outline-none'
+  'flex flex-col gap-1 bg-bg rounded-[14px] py-3 px-3.5 lg:py-3.5 lg:px-[18px] text-left focus-within:ring-2 focus-within:ring-primary focus-visible:ring-2 focus-visible:ring-primary outline-none'
 const fieldLabel = 'text-xs font-bold tracking-[1px] text-fg-subtle uppercase'
-const fieldValue = 'text-lg font-bold'
-const fieldInput = 'w-full min-w-0 bg-transparent text-lg font-bold outline-none'
+const fieldValue = 'lg:text-lg text-[17px] font-bold'
+const fieldInput = 'w-full min-w-0 bg-transparent text-[17px] lg:text-lg font-bold outline-none'
 
 export default function SearchFields() {
   const { t } = useTranslation()
   return (
-    <div className="grid grid-cols-[1.1fr_1.1fr_1.3fr_1fr_auto] gap-2">
+    <div className="grid grid-cols-2 gap-1.5 lg:grid-cols-[1.1fr_1.1fr_1.3fr_1fr_auto] lg:gap-2">
       <label className={fieldBox}>
         <span className={fieldLabel}>{t('search.from')}</span>
         <input className={fieldInput} type="text" defaultValue="San Francisco SFO" />
@@ -37,7 +37,7 @@ export default function SearchFields() {
         </span>
       </button>
 
-      <Button className="h-auto!" type="submit" variant="primary">
+      <Button className="col-span-2 h-13 lg:col-span-1 lg:h-auto!" type="submit" variant="primary">
         {t('search.submit')}
         <LuArrowRight size={20} />
       </Button>

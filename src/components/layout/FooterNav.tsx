@@ -18,13 +18,13 @@ export default function FooterNav() {
   ]
   return (
     // aria-label — теж текст (його читає скрінрідер), тому теж через t()
-    <nav aria-label={t('footer.navLabel')}>
-      <ul className="flex gap-8">
+    <nav aria-label={t('footer.navLabel')} className="mt-2 lg:mt-0">
+      <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 lg:gap-x-8">
         {footerLinks.map((link) => (
           <li key={link.to}>
             <NavLink
               className={({ isActive }) =>
-                `font-light ${isActive ? 'text-primary' : 'text-fg-muted'}`
+                `font-semibold transition-colors hover:text-fg ${isActive ? 'text-primary' : 'text-fg-muted'}`
               }
               to={link.to}
             >

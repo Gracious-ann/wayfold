@@ -32,7 +32,9 @@
     "themeToDark": "Увімкнути темну тему",
     "themeToLight": "Увімкнути світлу тему",
     "signIn": "Увійти",
-    "createAccount": "Створити акаунт"
+    "createAccount": "Створити акаунт",
+    "openMenu": "Відкрити меню",
+    "closeMenu": "Закрити меню"
   },
   "hero": {
     "eyebrow": "Рейси й житло в одному плані",

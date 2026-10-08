@@ -13,8 +13,8 @@ export default function TripSearch() {
   ]
 
   return (
-    <form className="mt-10 flex flex-col gap-3 rounded-[20px] bg-surface p-3 shadow-card">
-      <div className="flex">
+    <form className="mt-5 flex flex-col gap-1.5 rounded-[20px] bg-surface p-2 shadow-card lg:mt-10 lg:gap-3 lg:p-3">
+      <div className="hidden lg:flex">
         <div className="flex grow gap-1 p-1">
           {typeTrip.map((type) => (
             <button

@@ -9,19 +9,19 @@ export default function Destination() {
   const [budget, setBudget] = useState<number | null>(1500)
 
   return (
-    <section className="flex flex-col gap-7 pt-24">
-      <div className="flex items-end gap-6">
+    <section className="flex flex-col gap-7 pt-12 lg:pt-24">
+      <div className="flex flex-col items-start gap-4 lg:flex-row lg:items-end lg:gap-6">
         <div className="flex grow flex-col gap-2.5">
-          <h2 className="font-display text-[44px] font-medium tracking-[-1px]">
+          <h2 className="font-display text-[28px] font-medium tracking-[-1px] lg:text-[44px]">
             {t('budget.titleBefore')}{' '}
             <span className="text-primary italic">
               {budget === null
                 ? t('budget.anyBudgetInTitle')
                 : `$${budget.toLocaleString('en-US')}`}
-            </span>{' '}
+            </span>
             {t('budget.titleAfter')}
           </h2>
-          <p className="text-[17px] text-fg-muted">
+          <p className="text-[15px] text-fg-muted lg:text-[17px]">
             {t('budget.subtitle', { count: def.night, city: def.city })}
           </p>
         </div>
