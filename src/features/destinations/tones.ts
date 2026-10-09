@@ -17,3 +17,9 @@ export const toneText = {
   success: 'text-success',
   sky: 'text-sky',
 }
+
+export type Tone = keyof typeof toneBg
+
+export function getTone(tone: string): Tone {
+  return tone in toneBg ? (tone as Tone) : 'primary'
+}

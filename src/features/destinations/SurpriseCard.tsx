@@ -26,7 +26,7 @@ export default function SurpriseCard({
   return (
     <li>
       <Link
-        to="/flights"
+        to={value === null ? '/surprise' : `/surprise?budget=${value}`}
         className="flex h-full flex-col justify-between rounded-3xl bg-fg p-4 text-bg lg:p-6"
       >
         <LuGlobe size={32} strokeWidth={1.8} />

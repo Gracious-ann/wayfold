@@ -1,12 +1,12 @@
 {
   "common": {
+    "duration": "{{hours}}h {{minutes}}m",
     "nights_one": "{{count}} night",
     "nights_other": "{{count}} nights",
     "adults_one": "{{count}} adult",
     "adults_other": "{{count}} adults",
     "rooms_one": "{{count}} room",
     "rooms_other": "{{count}} rooms",
-    "duration": "{{hours}}h {{minutes}}m",
     "fromPrice": "from {{price}}",
     "from": "from",
     "hotel": "hotel"
@@ -67,6 +67,10 @@
     "photo": "Photo",
     "moreTripsAny_one": "{{count}} more trip →",
     "moreTripsAny_other": "{{count}} more trips →"
+  },
+  "surprise": {
+    "titleBefore": "Where to go under",
+    "titleAny": "Where to go on any budget"
   },
   "benefits": {
     "calendarTitle": "A price calendar for the whole trip",

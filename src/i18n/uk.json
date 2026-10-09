@@ -1,5 +1,6 @@
 {
   "common": {
+    "duration": "{{hours}} год {{minutes}} хв",
     "nights_one": "{{count}} ніч",
     "nights_few": "{{count}} ночі",
     "nights_many": "{{count}} ночей",
@@ -12,7 +13,6 @@
     "rooms_few": "{{count}} номери",
     "rooms_many": "{{count}} номерів",
     "rooms_other": "{{count}} номера",
-    "duration": "{{hours}} год {{minutes}} хв",
     "fromPrice": "від {{price}}",
     "from": "від",
     "hotel": "готель"
@@ -83,6 +83,10 @@
     "moreTripsAny_few": "Ще {{count}} поїздки →",
     "moreTripsAny_many": "Ще {{count}} поїздок →",
     "moreTripsAny_other": "Ще {{count}} поїздки →"
+  },
+  "surprise": {
+    "titleBefore": "Куди поїхати до",
+    "titleAny": "Куди поїхати за будь-який бюджет"
   },
   "benefits": {
     "calendarTitle": "Календар цін для всієї поїздки",

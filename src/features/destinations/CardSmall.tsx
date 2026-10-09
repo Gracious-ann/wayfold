@@ -1,22 +1,25 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import type { Destination } from './destinations.data'
-import { toneBg, toneText } from './tones'
+import type { DestinationData } from './destinations.data'
+import { getTone, toneBg } from './tones'
+import { getPhotoUrl } from '../../lib/api'
 
-export default function CardSmall({ info }: { info: Destination }) {
+export default function CardSmall({ info }: { info: DestinationData }) {
   const { t } = useTranslation()
   return (
     <li>
       <Link
         to={`/flights?to=${info.id}`}
-        className={`flex h-full flex-col justify-between rounded-3xl p-4 lg:p-6 ${toneBg[info.tone]}`}
+        className={`relative flex h-full flex-col justify-end overflow-hidden rounded-3xl p-3 lg:p-4 ${toneBg[getTone(info.tone)]}`}
       >
-        <p className={`text-[13px] font-bold ${toneText[info.tone]}`}>
-          [{t('destinations.photo')}: {info.photo}]
-        </p>
+        <img
+          src={getPhotoUrl(info.image_path)}
+          alt=""
+          className="absolute inset-0 size-full object-cover"
+        />
 
-        <div className="flex flex-col gap-1.5">
-          <h3 className="font-display text-[22px] font-medium lg:text-[28px]">
+        <div className="relative flex flex-col gap-1 rounded-[18px] bg-surface p-3.5">
+          <h3 className="font-display text-[22px] font-medium lg:text-2xl">
             {info.city}
             {info.country && `, ${info.country}`}
           </h3>
@@ -26,10 +29,14 @@ export default function CardSmall({ info }: { info: Destination }) {
             {info.stops === 1 && t('destinations.stops', { count: 1 })}
             {info.stops > 1 && t('destinations.stops', { count: info.stops })}
             {' · '}
-            {info.duration}
-            {' · '}
+            {info.duration_minutes !== null &&
+              t('common.duration', {
+                hours: Math.floor(info.duration_minutes / 60),
+                minutes: info.duration_minutes % 60,
+              })}
+            {info.duration_minutes !== null && ' · '}
             {t('common.from')}{' '}
-            <strong className="text-fg">${info.priceFrom.toLocaleString('en-US')}</strong>
+            <strong className="text-fg">${info.price_from.toLocaleString('en-US')}</strong>
           </p>
         </div>
       </Link>

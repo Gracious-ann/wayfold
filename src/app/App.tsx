@@ -9,6 +9,7 @@ import PageNotFound from './PageNotFound'
 import About from '../features/info/About'
 import Support from '../features/info/Support'
 import Privacy from '../features/info/Privacy'
+import Surprise from '../features/destinations/Surprise'
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="flights" element={<Flight />} />
           <Route path="stays" element={<Stays />} />
           <Route path="flight-stay" element={<FlightStays />} />
+          <Route path="surprise" element={<Surprise />} />
           <Route path="trips" element={<MyTrips />} />
           <Route path="about" element={<About />} />
           <Route path="support" element={<Support />} />

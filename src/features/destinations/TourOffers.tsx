@@ -1,13 +1,16 @@
 import CardOffers from './CardOffers'
-import { destinations } from './destinations.data'
+import useDestinations from '../../hooks/useDestinations'
 
 export default function TourOffers({ value }: { value: number | null }) {
-  const data = destinations.filter((info) => {
+  const { data } = useDestinations()
+  const destinations = data ?? []
+
+  const filteredData = destinations.filter((info) => {
     if (value === null) {
       return true
     }
-    return info.priceFrom <= value
+    return info.price_from <= value
   })
 
-  return <CardOffers data={data} value={value} />
+  return <CardOffers data={filteredData} value={value} />
 }
