@@ -67,7 +67,7 @@
     "anyBudgetInTitle": "будь-який бюджет"
   },
   "destinations": {
-    "bestValue": "Найвигідніше цього місяця",
+    "bestTime": "Найкращий час для поїздки",
     "nonstop": "Без пересадок",
     "stops_one": "{{count}} пересадка",
     "stops_few": "{{count}} пересадки",

@@ -11,7 +11,7 @@ export default function Budget({ value, onChange }: BudgetProps) {
   const options = [...budgets, null]
 
   return (
-    <div className="flex max-w-full gap-2 overflow-x-auto">
+    <div className="flex flex-wrap gap-2 lg:shrink-0 lg:flex-nowrap">
       {options.map((budget) => (
         <button
           key={budget ?? 'any'}

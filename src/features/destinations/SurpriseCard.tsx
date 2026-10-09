@@ -1,26 +1,23 @@
 import { useTranslation } from 'react-i18next'
 import { LuGlobe } from 'react-icons/lu'
 import { Link } from 'react-router-dom'
-import type { Destination } from './destinations.data'
 
 export default function SurpriseCard({
   value,
-  data,
+  moreCount,
 }: {
   value: number | null
-  data: Destination[]
+  moreCount: number
 }) {
   const { t } = useTranslation()
 
-  // TODO (Етап 2): data.length — це кількість ПОКАЗАНИХ карток, а «more trips» має означати
-  // «ще стільки, крім показаних». Коли дані прийдуть із бази, замінити на
-  // (усього підходящих напрямків) − (показаних у сітці).
+  // moreCount — скільки напрямків за бюджетом НЕ показано в сітці (рахує CardOffers)
   function getSurpriseText() {
     if (value === null) {
-      return t('destinations.moreTripsAny', { count: data.length })
+      return t('destinations.moreTripsAny', { count: moreCount })
     } else {
       return t('destinations.moreTrips', {
-        count: data.length,
+        count: moreCount,
         price: `$${value.toLocaleString('en-US')}`,
       })
     }

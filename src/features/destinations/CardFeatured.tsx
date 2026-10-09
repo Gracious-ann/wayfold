@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom'
 import type { Destination } from './destinations.data'
 import { toneBg, toneText } from './tones'
 
-// ВЕЛИКА картка: місто, в якого в даних є featured (зараз це Tokyo).
+// ВЕЛИКА картка: напрямок, який обрав CardOffers (найдешевший із сезонних).
 export default function CardFeatured({ info }: { info: Destination }) {
   const { t } = useTranslation()
-  const featured = info.featured
-  if (!featured) return null
 
   return (
     <li className="lg:row-span-2">
@@ -17,7 +15,7 @@ export default function CardFeatured({ info }: { info: Destination }) {
       >
         <div className="flex items-start justify-between gap-3 lg:items-center">
           <p className="shrink-0 rounded-full bg-surface px-3 py-1.5 text-[13px] font-bold">
-            {t('destinations.bestValue')}
+            {t('destinations.bestTime')}
           </p>
           <p className={`pt-1.5 text-right text-[13px] font-bold lg:pt-0 ${toneText[info.tone]}`}>
             [{t('destinations.photo')}: {info.photo}]
@@ -50,9 +48,8 @@ export default function CardFeatured({ info }: { info: Destination }) {
                 : t('destinations.stops', { count: info.stops })}
             </p>
             <p>
-              {featured.hotel} · {t('common.nights', { count: featured.nights })}
+              {info.hotel} · {t('common.nights', { count: 5 })}
             </p>
-            <p>{featured.dates}</p>
           </div>
         </div>
       </Link>

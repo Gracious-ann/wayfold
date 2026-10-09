@@ -57,7 +57,7 @@
     "anyBudgetInTitle": "any budget"
   },
   "destinations": {
-    "bestValue": "Best value this month",
+    "bestTime": "Best time to go",
     "nonstop": "Nonstop",
     "stops_one": "{{count}} stop",
     "stops_other": "{{count}} stops",
