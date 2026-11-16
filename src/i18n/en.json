@@ -70,7 +70,26 @@
   },
   "surprise": {
     "titleBefore": "Where to go under",
-    "titleAny": "Where to go on any budget"
+    "titleAny": "Where to go on any budget",
+    "description_one": "{{count}} destination: round-trip flight and hotel",
+    "description_other": "{{count}} destinations: round-trip flight and hotel",
+    "budgetLabel": "Budget",
+    "inSeason": "Best time is now",
+    "otherMonths": "Other months",
+    "bestNow": "Best time now",
+    "picked": "Your random pick",
+    "whenToGo": "When to go",
+    "bestMonths": "Best months: {{months}}. Now: {{current}}.",
+    "seeFlights": "See flights →",
+    "showMore_one": "Show {{count}} more destination",
+    "showMore_other": "Show {{count}} more destinations",
+    "loading": "Loading destinations…",
+    "emptyTitle": "No destinations for this budget",
+    "emptyText": "Try a bigger budget",
+    "emptyAction": "Any budget",
+    "errorTitle": "Couldn’t load destinations",
+    "errorText": "Check your connection — your budget is saved in the link.",
+    "errorAction": "Try again"
   },
   "benefits": {
     "calendarTitle": "A price calendar for the whole trip",

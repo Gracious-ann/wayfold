@@ -46,12 +46,16 @@ export type Database = {
           airport_code: string
           best_months: number[]
           city: string
+          city_uk: string | null
           country: string | null
+          country_uk: string | null
           description: string | null
+          description_uk: string | null
           duration_minutes: number | null
           hotel: string | null
           id: string
           image_path: string | null
+          nights: number
           photo: string | null
           price_from: number
           sort_order: number
@@ -62,12 +66,16 @@ export type Database = {
           airport_code: string
           best_months?: number[]
           city: string
+          city_uk?: string | null
           country?: string | null
+          country_uk?: string | null
           description?: string | null
+          description_uk?: string | null
           duration_minutes?: number | null
           hotel?: string | null
           id: string
           image_path?: string | null
+          nights?: number
           photo?: string | null
           price_from: number
           sort_order?: number
@@ -78,12 +86,16 @@ export type Database = {
           airport_code?: string
           best_months?: number[]
           city?: string
+          city_uk?: string | null
           country?: string | null
+          country_uk?: string | null
           description?: string | null
+          description_uk?: string | null
           duration_minutes?: number | null
           hotel?: string | null
           id?: string
           image_path?: string | null
+          nights?: number
           photo?: string | null
           price_from?: number
           sort_order?: number
