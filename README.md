@@ -1,65 +1,82 @@
-# Wayfold
+# Wayfold ✈️
 
-Рейс, житло, місця й оплата в одній поїздці. Пет-проєкт на React.
+**Flights, stays, seats and payment — combined into one trip.**
+A travel booking web application built with React 19, TypeScript and Supabase. Portfolio project, **in progress**.
 
-**Демо:** [wayfold-phi.vercel.app](https://wayfold-phi.vercel.app/)
+🔗 **Live Demo:** https://wayfold-phi.vercel.app/
 
-**Стек:** Vite · React 19 · TypeScript · Tailwind CSS v4 · Supabase · Stripe (test mode)
+## 🧭 User Flow
 
-## Запуск
+**Search → Flights → Stays → Seats → Payment → Confirmation**
 
-```bash
-npm install
-cp .env.example .env.local   # і заповнити публічні ключі
-npm run dev                  # http://localhost:5173
+- Book as a guest — an account is optional
+- Sign in with a magic link or Google (Supabase Auth)
+- Guests find their booking by booking code (e.g. `WF-4K9Q2`) and last name
+- All external services run in **test / sandbox mode** — no real payments or tickets
+
+## ✨ Features
+
+**Done**
+
+- Responsive home page with mobile menu and sticky header
+- Trip search with budget chips
+- Destination cards with a budget filter and season-based offers
+- "Surprise me" page with a random destination
+- Destination data and photos from Supabase (PostgreSQL) via TanStack Query
+- Ukrainian / English localization with a language switch
+- Light / dark theme based on design tokens
+- Info pages (About, Support, Privacy) and 404 page
+
+**Planned**
+
+- Flight results with price calendar, loading skeletons and error states
+- Stays with a hotel map and weather
+- Seat selection, checkout with Stripe (test mode) and booking confirmation
+- Sign in, guest booking lookup and "My trips"
+- Boarding pass PDF and offline mobile ticket (PWA)
+- E2E tests with Playwright
+
+## 🗺️ Roadmap
+
+| Stage | Scope | Status |
+| ----- | ----- | ------ |
+| 0 | Setup: Vite + React + TS, linting, Tailwind, Supabase project, Vercel deploy | ✅ Done |
+| 1 | Design system (light/dark tokens, UI kit), routing, i18n, home page | ✅ Done |
+| 2 | Flights on mock data: search form, URL params, flight list, filters, price calendar, skeletons and error states | 🚧 In progress |
+| 3 | Stays, hotel map (MapLibre) with price pins, weather (Open-Meteo) | ⏳ Planned |
+| 4 | Seats, passenger form, Stripe checkout (test mode), booking confirmation email | ⏳ Planned |
+| 5 | Auth (magic link, Google), "My trips", guest booking lookup | ⏳ Planned |
+| 6 | Boarding pass PDF with QR code, add to calendar (.ics) | ⏳ Planned |
+| 7 | Real flight API, currency switch, PWA with offline tickets | ⏳ Planned |
+| 8 | E2E tests (Playwright), Lighthouse ≥ 90, release | ⏳ Planned |
+
+## 🛠 Tech Stack
+
+- **React 19** + **TypeScript**
+- **Vite**
+- **Tailwind CSS v4** with design tokens (CSS variables, light and dark theme)
+- **React Router**
+- **TanStack Query** — server state and caching
+- **Supabase** — PostgreSQL database, migrations, seed data, Auth
+- **i18next** / react-i18next — Ukrainian and English
+- **Stripe** (test mode) — planned for checkout
+- **oxlint**, **Prettier**
+- Deployed on **Vercel**
+- Designs in **Figma** (17 screens)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/          # App, layout, routing, 404
+├── components/   # layout (header, footer, menu) and UI components
+├── features/     # home, search, destinations, flights, stays, trips, info
+├── hooks/        # useDestinations, useLanguage
+├── i18n/         # uk.json, en.json, i18next setup
+├── lib/          # Supabase client, API, database types
+└── styles/       # design tokens
+supabase/
+├── migrations/   # database schema
+└── seed.sql      # reference data
 ```
 
-| Команда          | Що робить                                   |
-| ---------------- | ------------------------------------------- |
-| `npm run dev`    | dev-сервер з HMR                            |
-| `npm run build`  | перевірка типів + продакшн-збірка в `dist/` |
-| `npm run lint`   | лінтер (oxlint)                             |
-| `npm run format` | Prettier для всього проєкту                 |
-
-## Дизайн-токени
-
-Кольори з макета лежать у [`src/styles/tokens.css`](src/styles/tokens.css) як CSS-змінні
-(світла тема в `:root`, темна в `.dark`) і доступні як класи Tailwind:
-`bg-surface`, `text-fg-muted`, `border-border`, `bg-primary`, `font-display` тощо.
-
-## Photo credits
-
-Фото напрямків взяті з [Unsplash](https://unsplash.com) за [ліцензією Unsplash](https://unsplash.com/license). Дякую авторам:
-
-| Напрямок       | Автор                                                               |
-| -------------- | ------------------------------------------------------------------- |
-| Vancouver      | [Anthony Maw](https://unsplash.com/photos/GWRuNS8Y0KM)              |
-| New York       | [Mike Chavarri](https://unsplash.com/photos/kZokA2VTKn4)            |
-| Chicago        | [Zander Betterton](https://unsplash.com/photos/ff6MPtScTQM)         |
-| Honolulu       | [Spenser Sembrat](https://unsplash.com/photos/9bl-h_RX8NY)          |
-| Cancún         | [Jan Bachor](https://unsplash.com/photos/yHPKC4BdAPY)               |
-| Montréal       | [Dmitri M](https://unsplash.com/photos/7SvhuD1wsts)                 |
-| San José       | [Christina Victoria Craft](https://unsplash.com/photos/DFfNVwhOIWQ) |
-| Mexico City    | [Carlos Aguilar](https://unsplash.com/photos/oGRrpBX2ER4)           |
-| London         | [Shane Rounce](https://unsplash.com/photos/YTDATZz_q1M)             |
-| Lisbon         | [Louis Droege](https://unsplash.com/photos/8Nd3GY8z-iU)             |
-| Amsterdam      | [Adrien Olichon](https://unsplash.com/photos/QRtym77B6xk)           |
-| Paris          | [Vinicius Eloy Bailo](https://unsplash.com/photos/xcJiJsgHpFA)      |
-| Barcelona      | [Logan Armstrong](https://unsplash.com/photos/hVhfqhDYciU)          |
-| Tokyo          | [Jezael Melgoza](https://unsplash.com/photos/alY6_OpdwRQ)           |
-| Rome           | [Matteo del Piano](https://unsplash.com/photos/7Y015gklIDg)         |
-| Seoul          | [Ping Onganankun](https://unsplash.com/photos/5htrsUUbFGI)          |
-| Athens         | [Constantinos Kollias](https://unsplash.com/photos/yqBvJJ8jGBQ)     |
-| Reykjavík      | [Einar H. Reynis](https://unsplash.com/photos/geYUKmAKZp0)          |
-| Bangkok        | [Anantachai Saothong](https://unsplash.com/photos/0DKDTSFBXc8)      |
-| Buenos Aires   | [Ricardo Díaz](https://unsplash.com/photos/6zXclZKqI_8)             |
-| Marrakech      | [Paul Macallan](https://unsplash.com/photos/CFKksjYRSQ8)            |
-| Hanoi          | [Elliot Andrews](https://unsplash.com/photos/6keOhd7idJo)           |
-| Dubai          | [David Rodrigo](https://unsplash.com/photos/Fr6zexbmjmc)            |
-| Singapore      | [Hu Chen](https://unsplash.com/photos/__cBlRzLSTg)                  |
-| Rio de Janeiro | [Agustin Diaz Gargiulo](https://unsplash.com/photos/7F65HDP0-E0)    |
-| Sydney         | [Caleb](https://unsplash.com/photos/JmuyB_LibRo)                    |
-| Bali           | [Niklas Weiss](https://unsplash.com/photos/-2WlTWZLnRc)             |
-| Cape Town      | [Jaman Asad](https://unsplash.com/photos/FQ03xcur9As)               |
-| Queenstown     | [Ömer Faruk Bekdemir](https://unsplash.com/photos/5BuxuWIJF1Q)      |
-| Malé           | [Matheen Faiz](https://unsplash.com/photos/iwZqmickJxA)             |
